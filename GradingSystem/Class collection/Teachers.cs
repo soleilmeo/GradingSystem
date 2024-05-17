@@ -10,11 +10,16 @@ using Microsoft.Data.SqlClient;
 
 namespace GradingSystem.Class_collection
 {
-    public class Teachers : User
+    public class Teachers : IUser
     {
-        public Teachers(string connectionString) : base(connectionString) { }
+        private string connectionString;
 
-        public override int Create(string firstName, string lastName, string username, string password, string email, DateTime dateOfBirth, string phoneNumber)
+        public Teachers(string connectionString)
+        {
+            this.connectionString = connectionString;
+        }
+
+        public int Create(string firstName, string lastName, string username, string password, string email, DateTime dateOfBirth, string phoneNumber)
         {
             int result = 0;
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -38,7 +43,7 @@ namespace GradingSystem.Class_collection
             return result;
         }
 
-        public override void Update(string id,
+        public void Update(string id,
             string? firstName = null,
             string? lastName = null,
             string? username = null,
@@ -93,7 +98,7 @@ namespace GradingSystem.Class_collection
             }
         }
 
-        public override void Delete(string id)
+        public void Delete(string id)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -126,11 +131,6 @@ namespace GradingSystem.Class_collection
                     return "GV" + (maxID + 1);
                 }
             }
-        }
-
-        protected override string GenerateID()
-        {
-            return GenerateTeacherID();
         }
     }
 }
