@@ -28,19 +28,19 @@ namespace GradingSystem.Class_collection
             return null;
         }
 
-        public string GetRoleFromUsername(string username)
+        public string GetRoleFromID(string id)
         {
             string? role = "";
 
             using (SqlConnection connection = new(connectionString))
             {
                 connection.Open();
-                string query = "SELECT role FROM Teachers WHERE username = @Username" +
+                string query = "SELECT role FROM Teachers WHERE id = @ID" +
                                "UNION " +
-                               "SELECT role FROM Students WHERE username = @Username";
+                               "SELECT role FROM Students WHERE id = @ID";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@Username", username);
+                    command.Parameters.AddWithValue("@ID", id);
                     SqlDataReader reader = command.ExecuteReader();
                     if (reader.Read())
                     {
