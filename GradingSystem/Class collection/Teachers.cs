@@ -10,17 +10,13 @@ using Microsoft.Data.SqlClient;
 
 namespace GradingSystem.Class_collection
 {
-    public class Teachers
+    public class Teachers : User
     {
-        private string connectionString;
+        public Teachers(string connectionString) : base(connectionString) { }
 
-        public Teachers(string connectionString)
+        public override int Create(string firstName, string lastName, string username, string password, string email, DateTime dateOfBirth, string phoneNumber)
         {
-            this.connectionString = connectionString;
-        }
-
-        public void Create(string firstName, string lastName, string username, string password, string email, DateTime dateOfBirth, string phoneNumber)
-        {
+            int result = 0;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -36,18 +32,52 @@ namespace GradingSystem.Class_collection
                     command.Parameters.AddWithValue("@Email", email);
                     command.Parameters.AddWithValue("@DateOfBirth", dateOfBirth);
                     command.Parameters.AddWithValue("@PhoneNumber", phoneNumber);
-                    command.ExecuteNonQuery();
+                    result = command.ExecuteNonQuery();
                 }
             }
+            return result;
         }
 
-        public void Update(string id, string firstName, string lastName, string username, string password, string email, DateTime dateOfBirth, string phoneNumber)
+        public override void Update(string id,
+            string? firstName = null,
+            string? lastName = null,
+            string? username = null,
+            string? password = null,
+            string? email = null,
+            DateTime? dateOfBirth = null,
+            string? phoneNumber = null)
         {
+            // MUST have equal length
+            bool[] shouldUpdateTheseParams = new bool[7]
+            {
+                firstName != null, lastName != null,
+                username != null, password != null, email != null,
+                dateOfBirth != null, phoneNumber != null
+            };
+            string[] paramsToUpdate = new string[7]
+            {
+                "FirstName = @FirstName", "LastName = @LastName",
+                "Username = @Username", "Password = @Password", "Email = @Email",
+                "DateOfBirth = @DateOfBirth", "PhoneNumber = @PhoneNumber"
+            };
+
+            StringBuilder queryBuilder = new StringBuilder();
+            string separator = "";
+            for (int i = 0; i < shouldUpdateTheseParams.Length; i++)
+            {
+                bool shouldUpdate = shouldUpdateTheseParams[i];
+                if (shouldUpdate)
+                {
+                    queryBuilder.Append(separator);
+                    queryBuilder.Append(paramsToUpdate[i]);
+                    separator = ", ";
+                }
+            }
+
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                string query = "UPDATE Teachers SET FirstName = @FirstName, LastName = @LastName, Username = @Username, Password = @Password, " +
-                               "Email = @Email, DateOfBirth = @DateOfBirth, PhoneNumber = @PhoneNumber WHERE ID = @ID";
+                string query = "UPDATE Teachers SET " + queryBuilder.ToString() + " WHERE ID = @ID";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@ID", id);
@@ -63,7 +93,7 @@ namespace GradingSystem.Class_collection
             }
         }
 
-        public void Delete(string id)
+        public override void Delete(string id)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -96,6 +126,11 @@ namespace GradingSystem.Class_collection
                     return "GV" + (maxID + 1);
                 }
             }
+        }
+
+        protected override string GenerateID()
+        {
+            return GenerateTeacherID();
         }
     }
 }
