@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GradingSystem.Class_collection
 {
-    public abstract class User
+    public class User
     {
         protected string connectionString;
 
@@ -16,24 +16,41 @@ namespace GradingSystem.Class_collection
             this.connectionString = connectionString;
         }
 
-        public abstract int Create(
-            string firstName,
-            string lastName,
-            string username,
-            string password,
-            string email,
-            DateTime dateOfBirth,
-            string phoneNumber);
-        public abstract void Update(
-            string id,
-            string? firstName = null,
-            string? lastName = null,
-            string? username = null,
-            string? password = null,
-            string? email = null,
-            DateTime? dateOfBirth = null,
-            string? phoneNumber = null);
-        public abstract void Delete(string id);
-        protected abstract string GenerateID();
+        public IUser? FromRole(string role)
+        {
+            switch (role)
+            {
+                case "Teacher":
+                    return new Teachers(connectionString);
+                case "Student":
+                    return new Students(connectionString);
+            }
+            return null;
+        }
+
+        public string GetRoleFromUsername(string username)
+        {
+            string? role = "";
+
+            using (SqlConnection connection = new(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT role FROM Teachers WHERE username = @Username" +
+                               "UNION " +
+                               "SELECT role FROM Students WHERE username = @Username";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Username", username);
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        role = reader["role"].ToString();
+                    }
+                    reader.Close();
+                }
+            }
+
+            return role ?? "";
+        }
     }
 }
