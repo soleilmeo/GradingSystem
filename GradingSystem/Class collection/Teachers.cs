@@ -81,13 +81,13 @@ namespace GradingSystem.Class_collection
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@ID", id);
-                    command.Parameters.AddWithValue("@FirstName", firstName);
-                    command.Parameters.AddWithValue("@LastName", lastName);
-                    command.Parameters.AddWithValue("@Username", username);
-                    command.Parameters.AddWithValue("@Password", password);
-                    command.Parameters.AddWithValue("@Email", email);
-                    command.Parameters.AddWithValue("@DateOfBirth", dateOfBirth);
-                    command.Parameters.AddWithValue("@PhoneNumber", phoneNumber);
+                    if (firstName != null) command.Parameters.AddWithValue("@FirstName", firstName);
+                    if (lastName != null) command.Parameters.AddWithValue("@LastName", lastName);
+                    if (username != null) command.Parameters.AddWithValue("@Username", username);
+                    if (password != null) command.Parameters.AddWithValue("@Password", password);
+                    if (email != null) command.Parameters.AddWithValue("@Email", email);
+                    if (dateOfBirth != null) command.Parameters.AddWithValue("@DateOfBirth", dateOfBirth);
+                    if (phoneNumber != null) command.Parameters.AddWithValue("@PhoneNumber", phoneNumber);
                     command.ExecuteNonQuery();
                 }
             }
