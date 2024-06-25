@@ -14,8 +14,10 @@ namespace GradingSystem
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new frmForgotPw());
-            
+            //Application.Run(new frmForgotPw());
+
+            Application.Run(new FrmExam_test());
+            //Application.Run(new FrmExamResult());
         }
     }
 }

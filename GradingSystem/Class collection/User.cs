@@ -8,6 +8,8 @@ using System.Data;
 using Microsoft.Data.SqlClient;
 using Microsoft.VisualBasic.ApplicationServices;
 using Microsoft.IdentityModel.Tokens;
+using System.Net;
+using System.Windows.Forms;
 
 
 namespace GradingSystem.Class_collection
@@ -75,6 +77,29 @@ namespace GradingSystem.Class_collection
             return entryData ?? "";
         }
 
+        private static string GetEntryFromId(string connectionString, string entry, string userid)
+        {
+            string? entryData = "";
+            entry = entry.ToLower();
+
+            using (SqlConnection connection = new(connectionString))
+            {
+                connection.Open();
+                string query = "select " + entry + " from Users where user_id = @userid";
+                using (SqlCommand command = new(query, connection))
+                {
+                    command.Parameters.AddWithValue("@userid", userid);
+                    var data = command.ExecuteScalar();
+                    if (data != null)
+                    {
+                        entryData = data.ToString();
+                    }
+                }
+            }
+
+            return entryData ?? "";
+        }
+
         public static bool UserExists(string connectionString, string username)
         {
             return !GetIdFromUsername(connectionString, username).IsNullOrEmpty();
@@ -93,6 +118,21 @@ namespace GradingSystem.Class_collection
         public static string GetEmailFromUsername(string connectionString, string username)
         {
             return GetEntryFromUsername(connectionString, "email", username);
+        }
+
+        public static string GetRole(string connectionString, string userId)
+        {
+            return GetEntryFromId(connectionString, "role", userId);
+        }
+
+        public static string GetUsername(string connectionString, string userId)
+        {
+            return GetEntryFromId(connectionString, "username", userId);
+        }
+
+        public static string GetProfilePictureLink(string connectionString, string userId)
+        {
+            return GetEntryFromId(connectionString, "profile_picture", userId);
         }
 
         /*

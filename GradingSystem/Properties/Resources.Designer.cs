@@ -73,9 +73,29 @@ namespace GradingSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap default_pfp {
+            get {
+                object obj = ResourceManager.GetObject("default_pfp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hide_pw {
             get {
                 object obj = ResourceManager.GetObject("hide_pw", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap loading_spinner {
+            get {
+                object obj = ResourceManager.GetObject("loading_spinner", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
