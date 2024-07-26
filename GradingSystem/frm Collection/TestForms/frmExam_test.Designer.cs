@@ -94,8 +94,8 @@
             // 
             // FrmExam_test
             // 
-            AutoScaleDimensions = new SizeF(9F, 19F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             ClientSize = new Size(1025, 645);
             Controls.Add(MainPanel);
             Controls.Add(panel1);

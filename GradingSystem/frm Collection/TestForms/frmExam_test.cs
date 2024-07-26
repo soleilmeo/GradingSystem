@@ -95,10 +95,11 @@ namespace GradingSystem
             ExamGradingResult examResult = ExamGrader.GradeStudent(e.StudentId,e.ExamId,
                                                                    e.StudentAnswerData, e.ExamStartDate,
                                                                    e.ExamSubmitDate, passingGradePercent);
-            DisposeAll(MainPanel);
 
             // Submit to database
             ExamGrader.SubmitResult(examResult);
+
+            DisposeAll(MainPanel);
 
             // Display exam results
             LoadResultForm(examResult);

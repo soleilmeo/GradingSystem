@@ -108,7 +108,7 @@
             BackgroundPanel.Name = "BackgroundPanel";
             BackgroundPanel.Padding = new Padding(10);
             BackgroundPanel.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            BackgroundPanel.Size = new Size(890, 772);
+            BackgroundPanel.Size = new Size(890, 795);
             BackgroundPanel.TabIndex = 0;
             BackgroundPanel.Paint += guna2Panel1_Paint;
             // 
@@ -489,13 +489,14 @@
             // 
             // ucExamAnswerDisplay
             // 
-            AutoScaleMode = AutoScaleMode.None;
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             AutoSize = true;
             BackColor = Color.Transparent;
             Controls.Add(BackgroundPanel);
             Name = "ucExamAnswerDisplay";
             Padding = new Padding(5);
-            Size = new Size(900, 782);
+            Size = new Size(900, 805);
             BackgroundPanel.ResumeLayout(false);
             BackgroundPanel.PerformLayout();
             OptionDesignTemplateContainer.ResumeLayout(false);

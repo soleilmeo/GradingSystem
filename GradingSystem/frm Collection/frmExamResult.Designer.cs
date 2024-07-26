@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             tableLayoutPanel1 = new TableLayoutPanel();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             tableLayoutPanel3 = new TableLayoutPanel();
@@ -104,12 +104,12 @@
             guna2Panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             guna2Panel1.BorderRadius = 15;
             guna2Panel1.Controls.Add(tableLayoutPanel3);
-            guna2Panel1.CustomizableEdges = customizableEdges14;
+            guna2Panel1.CustomizableEdges = customizableEdges2;
             guna2Panel1.FillColor = SystemColors.ButtonFace;
             guna2Panel1.Location = new Point(15, 15);
             guna2Panel1.Margin = new Padding(15);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges15;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges3;
             guna2Panel1.Size = new Size(995, 150);
             guna2Panel1.TabIndex = 3;
             // 
@@ -138,7 +138,7 @@
             ProfilePicture.Location = new Point(44, 15);
             ProfilePicture.Margin = new Padding(15);
             ProfilePicture.Name = "ProfilePicture";
-            ProfilePicture.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            ProfilePicture.ShadowDecoration.CustomizableEdges = customizableEdges1;
             ProfilePicture.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             ProfilePicture.Size = new Size(120, 120);
             ProfilePicture.SizeMode = PictureBoxSizeMode.Zoom;
@@ -291,13 +291,13 @@
             // 
             ExamAnswersScrollableContainer.AutoScroll = true;
             ExamAnswersScrollableContainer.Controls.Add(ExamAnswersContainer);
-            ExamAnswersScrollableContainer.CustomizableEdges = customizableEdges17;
+            ExamAnswersScrollableContainer.CustomizableEdges = customizableEdges6;
             ExamAnswersScrollableContainer.Dock = DockStyle.Fill;
             ExamAnswersScrollableContainer.Location = new Point(15, 180);
             ExamAnswersScrollableContainer.Margin = new Padding(15, 0, 15, 15);
             ExamAnswersScrollableContainer.Name = "ExamAnswersScrollableContainer";
             ExamAnswersScrollableContainer.Padding = new Padding(25, 0, 25, 0);
-            ExamAnswersScrollableContainer.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            ExamAnswersScrollableContainer.ShadowDecoration.CustomizableEdges = customizableEdges7;
             ExamAnswersScrollableContainer.Size = new Size(995, 344);
             ExamAnswersScrollableContainer.TabIndex = 4;
             // 
@@ -317,10 +317,10 @@
             // guna2Panel3
             // 
             guna2Panel3.Controls.Add(label10);
-            guna2Panel3.CustomizableEdges = customizableEdges19;
+            guna2Panel3.CustomizableEdges = customizableEdges4;
             guna2Panel3.Location = new Point(3, 3);
             guna2Panel3.Name = "guna2Panel3";
-            guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges5;
             guna2Panel3.Size = new Size(200, 100);
             guna2Panel3.TabIndex = 1;
             // 
@@ -356,7 +356,7 @@
             BtnRetryExam.BorderThickness = 1;
             BtnRetryExam.CustomBorderColor = Color.FromArgb(255, 132, 0);
             BtnRetryExam.CustomBorderThickness = new Padding(1);
-            BtnRetryExam.CustomizableEdges = customizableEdges21;
+            BtnRetryExam.CustomizableEdges = customizableEdges8;
             BtnRetryExam.DisabledState.BorderColor = Color.DarkGray;
             BtnRetryExam.DisabledState.CustomBorderColor = Color.DarkGray;
             BtnRetryExam.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -373,7 +373,7 @@
             BtnRetryExam.Name = "BtnRetryExam";
             BtnRetryExam.PressedColor = Color.FromArgb(245, 136, 64);
             BtnRetryExam.PressedDepth = 5;
-            BtnRetryExam.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            BtnRetryExam.ShadowDecoration.CustomizableEdges = customizableEdges9;
             BtnRetryExam.Size = new Size(96, 35);
             BtnRetryExam.TabIndex = 39;
             BtnRetryExam.Text = "RETRY";
@@ -400,7 +400,7 @@
             BtnFindQues.BorderThickness = 1;
             BtnFindQues.CustomBorderColor = Color.FromArgb(255, 132, 0);
             BtnFindQues.CustomBorderThickness = new Padding(1);
-            BtnFindQues.CustomizableEdges = customizableEdges23;
+            BtnFindQues.CustomizableEdges = customizableEdges10;
             BtnFindQues.DisabledState.BorderColor = Color.DarkGray;
             BtnFindQues.DisabledState.CustomBorderColor = Color.DarkGray;
             BtnFindQues.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -416,7 +416,7 @@
             BtnFindQues.Name = "BtnFindQues";
             BtnFindQues.PressedColor = Color.FromArgb(245, 136, 64);
             BtnFindQues.PressedDepth = 5;
-            BtnFindQues.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            BtnFindQues.ShadowDecoration.CustomizableEdges = customizableEdges11;
             BtnFindQues.Size = new Size(55, 35);
             BtnFindQues.TabIndex = 37;
             BtnFindQues.Text = "GO";
@@ -427,7 +427,7 @@
             QuesFinderTextBox.AutoRoundedCorners = true;
             QuesFinderTextBox.BorderColor = Color.Silver;
             QuesFinderTextBox.BorderRadius = 16;
-            QuesFinderTextBox.CustomizableEdges = customizableEdges25;
+            QuesFinderTextBox.CustomizableEdges = customizableEdges12;
             QuesFinderTextBox.DefaultText = "";
             QuesFinderTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             QuesFinderTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -444,7 +444,7 @@
             QuesFinderTextBox.PasswordChar = '\0';
             QuesFinderTextBox.PlaceholderText = "1";
             QuesFinderTextBox.SelectedText = "";
-            QuesFinderTextBox.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            QuesFinderTextBox.ShadowDecoration.CustomizableEdges = customizableEdges13;
             QuesFinderTextBox.Size = new Size(70, 34);
             QuesFinderTextBox.TabIndex = 39;
             // 
@@ -461,8 +461,8 @@
             // 
             // FrmExamResult
             // 
-            AutoScaleDimensions = new SizeF(9F, 19F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.White;
             ClientSize = new Size(1025, 607);
             Controls.Add(tableLayoutPanel1);
